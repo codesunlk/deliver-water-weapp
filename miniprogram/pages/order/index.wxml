@@ -1,0 +1,83 @@
+<view wx:if="{{!orderList[0]}}">
+  <van-empty description="暂无订单" />
+</view>
+<view wx:else>
+  <van-tabs bind:change="onChange" color="#099BFC" title-active-color="#099BFC">
+    <van-tab title="最近订单">
+      <van-cell-group wx:for="{{newOrderList}}">
+        <van-cell value="{{item.order_time}}" icon="shop-o" border="{{flase}}" use-label-slot>
+          <view slot="title">
+            <view class="van-cell-text">
+              {{item.order_no}}
+            </view>
+          </view>
+          <view slot="label" class="label">
+            <view class="goods_item" wx:for="{{item.goods}}">
+              <view>
+                {{item.name + " * " + item.pcs}}
+              </view>
+              <view class="price">
+                ￥ {{item.pcs * item.price}}
+              </view>
+            </view>
+            <view class="total_price">
+              <view>
+                总价
+              </view>
+              <view class="price">
+                ￥{{item.total_price}}
+              </view>
+            </view>
+          </view>
+        </van-cell>
+        <van-cell title="{{item.add_name + ' ' + item.tel}}" use-label-slot border="{{flase}}">
+          <view slot="label">
+            <view>
+              {{item.address}}
+            </view>
+            <van-steps slot="label" steps="{{ steps }}" active="{{ item.state }}" />
+          </view>
+        </van-cell>
+      </van-cell-group>
+      <view class="bottom"></view>
+    </van-tab>
+    <van-tab title="历史订单">
+      <van-cell-group wx:for="{{oldOrderList}}">
+        <van-cell value="{{item.order_time}}" icon="shop-o" border="{{flase}}" use-label-slot>
+          <view slot="title">
+            <view class="van-cell-text">
+              {{item.order_no}}
+            </view>
+          </view>
+          <view slot="label" class="label">
+            <view class="goods_item" wx:for="{{item.goods}}">
+              <view>
+                {{item.name + " * " + item.pcs}}
+              </view>
+              <view class="price">
+                ￥ {{item.pcs * item.price}}
+              </view>
+            </view>
+            <view class="total_price">
+              <view>
+                总价
+              </view>
+              <view class="price">
+                ￥{{item.total_price}}
+              </view>
+            </view>
+          </view>
+        </van-cell>
+        <van-cell title="{{item.add_name + ' ' + item.tel}}" use-label-slot border="{{flase}}">
+          <view slot="label">
+            <view>
+              {{item.address}}
+            </view>
+            <van-steps slot="label" steps="{{ steps }}" active="{{ item.state }}" />
+          </view>
+        </van-cell>
+      </van-cell-group>
+      <view class="bottom"></view>
+    </van-tab>
+  </van-tabs>
+</view>

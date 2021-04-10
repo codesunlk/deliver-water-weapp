@@ -1,0 +1,27 @@
+<view wx:if="{{!userInfo.nickName}}">
+  <button bindtap="login">请先登录</button>
+</view>
+<view wx:else>
+  <view wx:for="{{carts}}">
+    <view>
+      <van-card num="{{item.pcs}}" price="{{item.price}}" desc="{{tiem.info}}" title="{{item.name}}"
+        thumb="{{ item.img }}" />
+    </view>
+  </view>
+
+  <view class="order_btn">
+    <van-submit-bar price="{{totalPrice*100}}" button-text="提交订单" bind:submit="onClickButton">
+      <van-tag type="primary">货到付款</van-tag>
+      <view slot="top">
+        <button type="primary" bindtap="handleChooseAddress">选择收货地址</button>
+      </view>
+      <view slot="tip" wx:if="{{address.userName}}">
+        {{address.provinceName + address.cityName + address.countyName + address.detailInfo}}
+      </view>
+      <view slot="tip" wx:if="{{address.userName}}">
+        {{address.userName +" "+address.telNumber}}
+      </view>
+    </van-submit-bar>
+  </view>
+
+</view>

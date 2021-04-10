@@ -1,0 +1,47 @@
+<view class="business_info">
+  <view class="address">
+    <image mode="widthFix" src="{{yingyeshijian}}"></image>
+  </view>
+  <view class="tel">
+    <button class="tel_btn" plain="{{true}}" bindtap="handleTel1">
+      <image mode="widthFix" src="../../icons/phone1.png"></image>
+      {{business.phone}}
+    </button>
+    <button class="tel_btn" plain="{{true}}" bindtap="handleTel2">
+      <image mode="widthFix" src="../../icons/phone2.png"></image>
+      {{business.tel}}
+    </button>
+  </view>
+</view>
+
+<van-notice-bar left-icon="volume-o" text="{{business.note}}" />
+
+<!-- 商品列表 -->
+<view class="goods">
+  <!-- 左侧导航 -->
+  <view class="sidebar">
+    <van-sidebar active-key="{{ activeKey }}" bind:change="onChangeSidebar">
+      <van-sidebar-item wx:for="{{leftMenuList}}" title="{{item}}" />
+    </van-sidebar>
+  </view>
+  <!-- 左侧导航 end -->
+  <!-- 右侧商品信息 -->
+  <view class="good_item">
+    <van-card wx:for="{{rightContent}}" price="{{item.price}}" desc="{{item.info}}" title="{{item.name}}"
+      thumb="{{item.img}}">
+      <view slot="footer">
+        <van-stepper min="0" value="{{item.pcs}}" integer data-item="{{item}}" bind:change="onChangeStepper" />
+      </view>
+    </van-card>
+  </view>
+  <!-- 右侧商品信息 end -->
+</view>
+<!-- 商品列表 end -->
+<!-- 提交订单 -->
+<view class="order">
+  <button class="order_btn" bindtap="handleOrder" wx:if="{{business.state == 100}}">提交订单</button>
+  <button class="order_btn" disabled wx:elif="{{business.state == 200}}">已打烊</button>
+  <button class="order_btn" disabled wx:elif="{{business.state == 300}}">休息中</button>
+
+</view>
+<!-- 提交订单 end -->

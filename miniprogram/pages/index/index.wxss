@@ -1,0 +1,52 @@
+image {
+  width: 100%;
+}
+.index_swiper swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.index_swiper swiper image {
+  width: 100%;
+}
+.business_info .tel {
+  display: flex;
+}
+.business_info button {
+  border: 2rpx solid var(--themeColor);
+  color: var(--themeColor);
+  display: flex;
+  font-size: 28rpx;
+  width: 100%;
+}
+.business_info button image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 16rpx;
+  margin-right: 10rpx;
+  margin-left: 50rpx;
+}
+.goods {
+  display: flex;
+}
+.goods .good_item {
+  width: 590rpx;
+}
+.goods .good_item .van-card {
+  background: white !important;
+}
+.goods .good_item .van-stepper {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+.order {
+  height: 140rpx;
+}
+.order .order_btn {
+  width: 750rpx;
+  color: white;
+  background-color: var(--themeColor);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}

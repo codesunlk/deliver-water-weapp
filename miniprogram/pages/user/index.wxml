@@ -1,0 +1,18 @@
+<view wx:if="{{!userInfo.nickName}}">
+	<button bindtap="login">请先登录</button>
+</view>
+<view wx:else>
+	<view class="header">
+		<van-image round width="80" height="80" src="{{userInfo.avatarUrl}}" />
+		<view class="nick_name">
+			{{userInfo.nickName}}
+		</view>
+	</view>
+	<view class="body">
+		<van-cell is-link icon="location-o" title="收货地址" size="large" bind:click="handleChooseAddress" />
+		<van-cell is-link icon="share-o" title="分享小程序" bind:click="onClick" />
+		<van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="onSelect"
+			bind:close="onClose" />
+	</view>
+
+</view>

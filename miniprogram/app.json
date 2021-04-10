@@ -1,0 +1,61 @@
+{
+  "usingComponents": {
+    "van-panel": "@vant/weapp/panel/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-steps": "@vant/weapp/steps/index",
+    "van-sidebar": "@vant/weapp/sidebar/index",
+    "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+    "van-tree-select": "@vant/weapp/tree-select/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-share-sheet": "@vant/weapp/share-sheet/index"
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/user/index",
+    "pages/order/index",
+    "pages/cart/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#099BFC",
+    "navigationBarTitleText": "盂县藏山梦",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#099BFC",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "订水",
+        "iconPath": "icons/index.png",
+        "selectedIconPath": "icons/index-o.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单",
+        "iconPath": "icons/order.png",
+        "selectedIconPath": "icons/order-o.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my-o.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,6 @@
+.van-submit-bar view .van-button {
+  float: right;
+}
+.order_btn {
+  height: 400rpx;
+}
